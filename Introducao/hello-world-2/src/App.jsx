@@ -8,7 +8,10 @@ function App() {
 
   return (
     <>
-      <h1>Hello World 2</h1>
+      <h1 className='text-slate-900 dark:text-white text-3xl font-bold p-8 '>Primeiro Projeto de React</h1>
+      <p className='text-cyan-500'>Páragrafo 1</p>
+      <p className='text-cyan-500'>Parágrafo 2</p>
+      <p className='text-cyan-500'>Parágrafo 3</p>
     </>
   )
 }
