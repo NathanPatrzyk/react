@@ -1,5 +1,7 @@
 import Image from "./assets/img1.jpg";
 import ManageData from "./components/ManageData";
+import ListRender from "./components/ListRender";
+import CondicionalRender from "./components/CondicionalRender";
 
 function App() {
   return (
@@ -12,6 +14,8 @@ function App() {
         <img className="w-72 mx-auto sm:mx-0" src={Image} alt="Paisagem Steampunk" />
       </div>
       <ManageData />
+      <ListRender />
+      <CondicionalRender />
     </>
   );
 }
