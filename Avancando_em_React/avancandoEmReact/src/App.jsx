@@ -3,6 +3,7 @@ import ManageData from "./components/ManageData";
 import ListRender from "./components/ListRender";
 import CondicionalRender from "./components/CondicionalRender";
 import ShowUserName from "./components/ShowUserName";
+import CarDetails from "./components/CarDetails";
 import { useState } from "react";
 
 function App() {
@@ -32,6 +33,9 @@ function App() {
       <ShowUserName name="Nathan" />
       <ShowUserName name={name} />
       <ShowUserName name={userName} />
+      <CarDetails branch="VW" km={100000} color="Azul" />
+      <CarDetails branch="Toyota" km={120000} color="Vermelho" />
+      <CarDetails branch="McLaren" km={40000} color="Laranja" />
     </>
   );
 }
