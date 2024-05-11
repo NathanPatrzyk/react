@@ -1,14 +1,35 @@
+import { useState } from "react";
 import Image from "./assets/img1.jpg";
+
 import ManageData from "./components/ManageData";
 import ListRender from "./components/ListRender";
 import CondicionalRender from "./components/CondicionalRender";
 import ShowUserName from "./components/ShowUserName";
 import CarDetails from "./components/CarDetails";
-import { useState } from "react";
+import Fragment from "./components/Fragment";
+import ExecuteFunction from "./components/ExecuteFunction";
+import Message from "./components/Message";
+import ChangeMessageState from "./components/ChangeMessageState";
 
 function App() {
   const name = "Joaquim";
   const [userName] = useState("Maria");
+
+  const cars = [
+    { id: 1, brand: "Ferrari", color: "Amarelo", newCar: true, km: 0 },
+    { id: 2, brand: "KIA", color: "Branco", newCar: false, km: 34343 },
+    { id: 3, brand: "Renault", color: "Azul", newCar: false, km: 234 },
+  ];
+
+  function showMessage() {
+    console.log("Evento do componente pai!");
+  }
+
+  const [message, setMessage] = useState("");
+
+  const handleMessage = (msg) => {
+    setMessage(msg);
+  };
 
   return (
     <>
@@ -30,12 +51,30 @@ function App() {
       <ManageData />
       <ListRender />
       <CondicionalRender />
+
       <ShowUserName name="Nathan" />
       <ShowUserName name={name} />
       <ShowUserName name={userName} />
-      <CarDetails branch="VW" km={100000} color="Azul" />
-      <CarDetails branch="Toyota" km={120000} color="Vermelho" />
-      <CarDetails branch="McLaren" km={40000} color="Laranja" />
+
+      <CarDetails brand="VW" km={100000} color="Azul" newCar={false} />
+      <CarDetails brand="Toyota" km={0} color="Vermelho" newCar={true} />
+      <CarDetails brand="McLaren" km={40000} color="Laranja" newCar={false} />
+      <CarDetails brand="Ford" km={0} color="Vermelho" newCar={true} />
+      <CarDetails brand="Fiat" km={40000} color="Branco" newCar={false} />
+      {cars.map((car) => (
+        <CarDetails
+          key={car.id}
+          brand={car.brand}
+          color={car.color}
+          km={car.km}
+          newCar={car.newCar}
+        />
+      ))}
+
+      <Fragment propFragment="teste" />
+      <ExecuteFunction myFunction={showMessage} />
+      <Message msg={message} />
+      <ChangeMessageState handleMessage={handleMessage} />
     </>
   );
 }
