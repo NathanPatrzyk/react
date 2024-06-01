@@ -1,12 +1,11 @@
-import { useState } from 'react'
+import StartScreen from "./components/StartScreen";
 
 function App() {
-
   return (
-    <>
-      <h1 className='text-violet-50 text-3xl md:text-5xl text-center font-bold'>Secret Word</h1>
-    </>
-  )
+    <div className="flex justify-center items-center text-center">
+      <StartScreen />
+    </div>
+  );
 }
 
-export default App
+export default App;
