@@ -1,7 +1,7 @@
 const StartScreen = ({ startGame }) => {
   return (
     <div>
-      <h1 className="text-[#473626] text-3xl md:text-5xl font-bold pt-8 md:pt-16">
+      <h1 className="text-[#473626] text-3xl md:text-5xl font-bold">
         Secret Word
       </h1>
       <p className="text-[#473626] my-4 md:my-8">

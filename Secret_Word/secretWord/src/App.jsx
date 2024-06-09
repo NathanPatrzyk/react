@@ -25,12 +25,8 @@ function App() {
     const category =
       categories[Math.floor(Math.random() * Object.keys(categories).length)];
 
-    console.log(category);
-
     const word =
       words[category][Math.floor(Math.random() * words[category].length)];
-
-    console.log(word);
 
     return { word, category };
   };
@@ -40,8 +36,11 @@ function App() {
 
     let wordLetters = word.split("");
 
-    console.log(word, category);
-    console.log(wordLetters);
+    wordLetters = wordLetters.map((l) => l.toLowerCase());
+
+    setPickedWord(word);
+    setPickedCategory(category);
+    setLetters(letters);
 
     setGameStage(stages[1].name);
   };
@@ -55,7 +54,7 @@ function App() {
   };
 
   return (
-    <div className="flex justify-center items-center text-center px-8">
+    <div className="flex justify-center items-center text-center px-8 pt-8 md:pt-16">
       {gameStage === "start" && <StartScreen startGame={startGame} />}
       {gameStage === "game" && <Game verifyLetter={verifyLetter} />}
       {gameStage === "end" && <GameOver retry={retry} />}
