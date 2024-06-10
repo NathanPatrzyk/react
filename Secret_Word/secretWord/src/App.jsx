@@ -18,7 +18,9 @@ function App() {
 
   const [pickedWord, setPickedWord] = useState("");
   const [pickedCategory, setPickedCategory] = useState("");
+
   const [letters, setLetters] = useState([]);
+  const [guessedLetters, setGuessedLetters] = useState([]);
 
   const pickWordAndCategory = () => {
     const categories = Object.keys(words);
