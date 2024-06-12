@@ -31,9 +31,9 @@ const Game = ({
       <h1 className="text-[#473626] text-3xl md:text-5xl font-bold  my-4 md:my-8">
         Adivinhe a palavra:
       </h1>
-      <h3>
+      <h3 className="text-[#473626]">
         Dica sobre a palavra:{" "}
-        <span className="text-[#473626] font-bold">{pickedCategory}</span>
+        <span className="font-bold">{pickedCategory}</span>
       </h3>
       <p className="text-[#473626] font-bold mt-4 md:mt-8">
         Você ainda tem {guesses} tentativa(s)
