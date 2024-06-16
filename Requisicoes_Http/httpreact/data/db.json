@@ -1,0 +1,254 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Camisa",
+      "price": 59.9
+    },
+    {
+      "id": 2,
+      "name": "Calça vermelha",
+      "price": 89.9
+    },
+    {
+      "id": 3,
+      "name": "Boné aba reta",
+      "price": 29.9
+    },
+    {
+      "id": 4,
+      "name": "Camiseta",
+      "price": 49.9
+    },
+    {
+      "id": 5,
+      "name": "Jaqueta",
+      "price": 199.9
+    },
+    {
+      "id": 6,
+      "name": "Tênis",
+      "price": 149.9
+    },
+    {
+      "id": 7,
+      "name": "Saia",
+      "price": 69.9
+    },
+    {
+      "id": 8,
+      "name": "Bermuda",
+      "price": 89.9
+    },
+    {
+      "id": 9,
+      "name": "Meia",
+      "price": 9.9
+    },
+    {
+      "id": 10,
+      "name": "Relógio",
+      "price": 299.9
+    },
+    {
+      "id": 11,
+      "name": "Óculos de sol",
+      "price": 199.9
+    },
+    {
+      "id": 12,
+      "name": "Mochila",
+      "price": 149.9
+    },
+    {
+      "id": 13,
+      "name": "Chinelo",
+      "price": 29.9
+    },
+    {
+      "id": 14,
+      "name": "Cinto",
+      "price": 39.9
+    },
+    {
+      "id": 15,
+      "name": "Bolsa",
+      "price": 159.9
+    },
+    {
+      "id": 16,
+      "name": "Brinco",
+      "price": 19.9
+    },
+    {
+      "id": 17,
+      "name": "Colar",
+      "price": 49.9
+    },
+    {
+      "id": 18,
+      "name": "Pulseira",
+      "price": 29.9
+    },
+    {
+      "id": 19,
+      "name": "Blusa",
+      "price": 79.9
+    },
+    {
+      "id": 20,
+      "name": "Gorro",
+      "price": 24.9
+    },
+    {
+      "id": 21,
+      "name": "Sapato",
+      "price": 199.9
+    },
+    {
+      "id": 22,
+      "name": "Sandália",
+      "price": 89.9
+    },
+    {
+      "id": 23,
+      "name": "Pijama",
+      "price": 59.9
+    },
+    {
+      "id": 24,
+      "name": "Casaco",
+      "price": 249.9
+    },
+    {
+      "id": 25,
+      "name": "Chapéu",
+      "price": 99.9
+    },
+    {
+      "id": 26,
+      "name": "Vestido",
+      "price": 129.9
+    },
+    {
+      "id": 27,
+      "name": "Camisa Polo",
+      "price": 69.9
+    },
+    {
+      "id": 28,
+      "name": "Short",
+      "price": 49.9
+    },
+    {
+      "id": 29,
+      "name": "Calça Jeans",
+      "price": 109.9
+    },
+    {
+      "id": 30,
+      "name": "Gravata",
+      "price": 39.9
+    },
+    {
+      "id": 31,
+      "name": "Suéter",
+      "price": 89.9
+    },
+    {
+      "id": 32,
+      "name": "Cachecol",
+      "price": 29.9
+    },
+    {
+      "id": 33,
+      "name": "Calção",
+      "price": 39.9
+    },
+    {
+      "id": 34,
+      "name": "Body",
+      "price": 59.9
+    },
+    {
+      "id": 35,
+      "name": "Calça Legging",
+      "price": 49.9
+    },
+    {
+      "id": 36,
+      "name": "Regata",
+      "price": 29.9
+    },
+    {
+      "id": 37,
+      "name": "Blazer",
+      "price": 179.9
+    },
+    {
+      "id": 38,
+      "name": "Cropped",
+      "price": 39.9
+    },
+    {
+      "id": 39,
+      "name": "Top",
+      "price": 49.9
+    },
+    {
+      "id": 40,
+      "name": "Cardigan",
+      "price": 99.9
+    },
+    {
+      "id": 41,
+      "name": "Tênis esportivo",
+      "price": 189.9
+    },
+    {
+      "id": 42,
+      "name": "Chuteira",
+      "price": 129.9
+    },
+    {
+      "id": 43,
+      "name": "Macacão",
+      "price": 99.9
+    },
+    {
+      "id": 44,
+      "name": "Bolero",
+      "price": 59.9
+    },
+    {
+      "id": 45,
+      "name": "Maiô",
+      "price": 79.9
+    },
+    {
+      "id": 46,
+      "name": "Biquíni",
+      "price": 69.9
+    },
+    {
+      "id": 47,
+      "name": "Sunga",
+      "price": 49.9
+    },
+    {
+      "id": 48,
+      "name": "Chapéu de praia",
+      "price": 89.9
+    },
+    {
+      "id": 49,
+      "name": "Cueca",
+      "price": 19.9
+    },
+    {
+      "id": 50,
+      "name": "Calcinha",
+      "price": 19.9
+    }
+  ]
+}
