@@ -1,22 +1,16 @@
 import { useState, useEffect } from "react";
 
+import { useFetch } from "./hooks/useFetch";
+
 const url = "http://localhost:3000/products";
 
 function App() {
   const [products, setProducts] = useState([]);
 
+  const { data: items, httpConfig, loading } = useFetch(url);
+
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");
-
-  useEffect(() => {
-    async function fetchData() {
-      const res = await fetch(url);
-      const data = await res.json();
-
-      setProducts(data);
-    }
-    fetchData();
-  }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -26,15 +20,10 @@ function App() {
       price,
     };
 
-    const res = await fetch(url, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(product),
-    });
+    httpConfig(product, "POST");
 
-    
+    setName("");
+    setPrice("");
   };
 
   return (
@@ -42,15 +31,17 @@ function App() {
       <h1 className="text-3xl text-cyan-500 text-center font-bold md:px-8 px-4 md:py-4 py-2">
         Lista de Produtos
       </h1>
+      {loading && <p>Carregando dados...</p>}
       <div className="flex flex-col md:gap-4 gap-2 md:px-8 px-4 md:py-4 py-2 text-center">
-        {products.map((product) => (
-          <div key={product.id}>
-            <p className="text-cyan-900">
-              <strong className="text-cyan-500">{product.name}</strong> - R${" "}
-              {product.price}
-            </p>
-          </div>
-        ))}
+        {items &&
+          items.map((product) => (
+            <div key={product.id}>
+              <p className="text-cyan-900">
+                <strong className="text-cyan-500">{product.name}</strong> - R${" "}
+                {product.price}
+              </p>
+            </div>
+          ))}
       </div>
       <div className="md:px-8 px-4 md:py-4 py-2">
         <form

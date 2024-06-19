@@ -264,6 +264,121 @@
       "id": "8e41",
       "name": "Camisa Social",
       "price": "240.90"
+    },
+    {
+      "id": "94f0",
+      "name": "Camisa",
+      "price": "190.90"
+    },
+    {
+      "id": "6a5e",
+      "name": "Blusa de Moletom",
+      "price": "299.90"
+    },
+    {
+      "id": "a774",
+      "name": "Blusa de Lã",
+      "price": "199.90"
+    },
+    {
+      "id": "3894",
+      "name": "Chapéu",
+      "price": "50.90"
+    },
+    {
+      "id": "6ece",
+      "name": "Camisa",
+      "price": "190.90"
+    },
+    {
+      "id": "67d6",
+      "name": "Óculos",
+      "price": "30.90"
+    },
+    {
+      "id": "dedc",
+      "name": "Calça",
+      "price": "90.90"
+    },
+    {
+      "id": "5f1b",
+      "name": "Moletom",
+      "price": "150.90"
+    },
+    {
+      "id": "2c9f",
+      "name": "Calça",
+      "price": "89.90"
+    },
+    {
+      "id": "ab77",
+      "name": "Tênis",
+      "price": "299.90"
+    },
+    {
+      "id": "cb9e",
+      "name": "Blusa",
+      "price": "150.90"
+    },
+    {
+      "id": "cdf4",
+      "name": "Blusa",
+      "price": "184.90"
+    },
+    {
+      "id": "d31a",
+      "name": "Regata",
+      "price": "50.90"
+    },
+    {
+      "id": "690b",
+      "name": "Jaqueta",
+      "price": "99.90"
+    },
+    {
+      "id": "cfda",
+      "name": "Roupão",
+      "price": "99.90"
+    },
+    {
+      "id": "a037",
+      "name": "Sapato",
+      "price": "120.90"
+    },
+    {
+      "id": "1904",
+      "name": "Cachecol",
+      "price": "70.90"
+    },
+    {
+      "id": "f33c",
+      "name": "Blusa",
+      "price": "150.90"
+    },
+    {
+      "id": "f59f",
+      "name": "Cachecol",
+      "price": "69.90"
+    },
+    {
+      "id": "808d",
+      "name": "Regata",
+      "price": "49.90"
+    },
+    {
+      "id": "b410",
+      "name": "Camisa",
+      "price": "140.90"
+    },
+    {
+      "id": "1c4f",
+      "name": "Cachecol",
+      "price": "44.9"
+    },
+    {
+      "id": "2ed3",
+      "name": "Camiseta",
+      "price": "49.90"
     }
   ]
 }
