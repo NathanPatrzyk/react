@@ -7,7 +7,7 @@ const url = "http://localhost:3000/products";
 function App() {
   const [products, setProducts] = useState([]);
 
-  const { data: items, httpConfig, loading } = useFetch(url);
+  const { data: items, httpConfig, loading, error } = useFetch(url);
 
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");
@@ -26,23 +26,47 @@ function App() {
     setPrice("");
   };
 
+  const handleDelete = (id) => {
+    httpConfig(id, "DELETE");
+  };
+
   return (
     <div className="md:py-4 py-2">
       <h1 className="text-3xl text-cyan-500 text-center font-bold md:px-8 px-4 md:py-4 py-2">
         Lista de Produtos
       </h1>
-      {loading && <p>Carregando dados...</p>}
-      <div className="flex flex-col md:gap-4 gap-2 md:px-8 px-4 md:py-4 py-2 text-center">
-        {items &&
-          items.map((product) => (
-            <div key={product.id}>
-              <p className="text-cyan-900">
-                <strong className="text-cyan-500">{product.name}</strong> - R${" "}
-                {product.price}
-              </p>
-            </div>
-          ))}
-      </div>
+      {loading && (
+        <p className="md:px-8 px-4 md:py-4 py-2 text-center">
+          Carregando dados...
+        </p>
+      )}
+      {error && (
+        <p className="text-red-500 font-bold md:px-8 px-4 md:py-4 py-2 text-center">
+          {error}
+        </p>
+      )}
+      {!loading && (
+        <div className="flex flex-col mx-auto md:max-w-[50vw] md:px-16 px-8 md:py-4 py-2">
+          {items &&
+            items.map((product) => (
+              <div
+                className="flex gap-2 items-center justify-between border-b-2 py-2 border-cyan-500"
+                key={product.id}
+              >
+                <p className="text-cyan-900">
+                  <strong className="text-cyan-500">{product.name}</strong> - R${" "}
+                  {product.price}
+                </p>
+                <button
+                  onClick={() => handleDelete(product.id)}
+                  className="text-red-100 text-center font-bold bg-red-500 hover:bg-red-600 rounded-md py-0.5 w-7"
+                >
+                  X
+                </button>
+              </div>
+            ))}
+        </div>
+      )}
       <div className="md:px-8 px-4 md:py-4 py-2">
         <form
           className="flex flex-col gap-2 items-center"
@@ -68,11 +92,21 @@ function App() {
               onChange={(e) => setPrice(e.target.value)}
             />
           </label>
-          <input
-            className="text-cyan-100 font-bold bg-cyan-500 hover:bg-cyan-600 rounded-md p-0.5 w-48"
-            type="submit"
-            value="Criar"
-          />
+          {loading && (
+            <input
+              className="text-slate-100 font-bold bg-slate-400 rounded-md p-0.5 w-48"
+              type="submit"
+              disabled
+              value="Aguarde..."
+            />
+          )}
+          {!loading && (
+            <input
+              className="text-cyan-100 font-bold bg-cyan-500 hover:bg-cyan-600 rounded-md p-0.5 w-48"
+              type="submit"
+              value="Criar"
+            />
+          )}
         </form>
       </div>
     </div>
