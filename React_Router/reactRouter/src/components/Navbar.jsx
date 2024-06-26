@@ -1,20 +1,28 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
   return (
     <nav className="flex gap-2 items-center justify-center md:pb-8 pb-4">
-      <Link
-        className="transition ease-in-out duration-300 hover:underline hover:text-slate-300"
+      <NavLink
+        className={({ isActive }) =>
+          isActive
+            ? "transition ease-in-out duration-300 text-sky-500 border-b-2 border-sky-500"
+            : "transition ease-in-out duration-300 border-b-2 border-transparent hover:border-slate-300 hover:text-slate-300"
+        }
         to="/"
       >
         Home
-      </Link>
-      <Link
-        className="transition ease-in-out duration-300 hover:underline hover:text-slate-300"
+      </NavLink>
+      <NavLink
+        className={({ isActive }) =>
+          isActive
+            ? "transition ease-in-out duration-300 text-sky-500 border-b-2 border-sky-500"
+            : "transition ease-in-out duration-300 border-b-2 border-transparent hover:border-slate-300 hover:text-slate-300"
+        }
         to="/about"
       >
-        About
-      </Link>
+        Sobre
+      </NavLink>
     </nav>
   );
 };
