@@ -8,7 +8,7 @@ const Home = () => {
 
   return (
     <div>
-      <h1 className="text-slate-50 text-3xl font-bold md:pb-8 pb-4">
+      <h1 className="text-slate-50 text-3xl font-bold md:py-8 py-4">
         Produtos
       </h1>
       {error && <p>{error}</p>}
