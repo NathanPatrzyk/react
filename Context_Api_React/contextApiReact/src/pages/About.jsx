@@ -6,7 +6,6 @@ const About = () => {
       <div className="text-orange-500 text-2xl font-bold h-screen flex items-center justify-center">
         Sobre
       </div>
-      <div className="text-orange-500 text-2xl font-bold h-screen flex items-center justify-center"></div>
     </div>
   );
 };
