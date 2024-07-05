@@ -1,10 +1,15 @@
-import React from "react";
+import { useCounterContext } from "../hooks/useCounterContext";
+import ChangeCounter from "../components/ChangeCounter";
 
 const Products = () => {
+  const { counter } = useCounterContext();
+
   return (
     <div>
-      <div className="text-orange-500 text-2xl font-bold h-screen flex items-center justify-center">
-        Produtos
+      <div className="h-screen flex flex-col gap-4 items-center justify-center">
+        <h1 className="text-orange-500 text-2xl font-bold">Produtos</h1>
+        <p className="text-orange-100">Valor do contador: {counter}</p>
+        <ChangeCounter />
       </div>
     </div>
   );

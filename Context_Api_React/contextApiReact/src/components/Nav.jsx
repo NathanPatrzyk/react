@@ -31,7 +31,7 @@ const Nav = () => {
           className={({ isActive }) =>
             isActive
               ? "px-1 pb-1 text-orange-500 border-b-2 border-orange-500"
-              : "transition-all duration-300 px-1 pb-1 hover:text-orange-200 border-b-2 border-transparent hover:border-orange-200"
+              : "text-orange-100 transition-all duration-300 px-1 pb-1 hover:text-orange-200 border-b-2 border-transparent hover:border-orange-200"
           }
           to="/"
         >
@@ -41,7 +41,7 @@ const Nav = () => {
           className={({ isActive }) =>
             isActive
               ? "px-1 pb-1 text-orange-500 border-b-2 border-orange-500"
-              : "transition-all duration-300 px-1 pb-1 hover:text-orange-200 border-b-2 border-transparent hover:border-orange-200"
+              : "text-orange-100 transition-all duration-300 px-1 pb-1 hover:text-orange-200 border-b-2 border-transparent hover:border-orange-200"
           }
           to="/products"
         >
@@ -51,7 +51,7 @@ const Nav = () => {
           className={({ isActive }) =>
             isActive
               ? "px-1 pb-1 text-orange-500 border-b-2 border-orange-500"
-              : "transition-all duration-300 px-1 pb-1 hover:text-orange-200 border-b-2 border-transparent hover:border-orange-200"
+              : "text-orange-100 transition-all duration-300 px-1 pb-1 hover:text-orange-200 border-b-2 border-transparent hover:border-orange-200"
           }
           to="/about"
         >

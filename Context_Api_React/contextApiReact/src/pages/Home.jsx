@@ -1,13 +1,18 @@
-import { useContext } from "react";
-import { CounterContext } from "../context/CounterContext";
+import ChangeCounter from "../components/ChangeCounter";
+
+import { useCounterContext } from "../hooks/useCounterContext";
+import { useTitleColorContext } from "../hooks/useTitleColorContext";
 
 const Home = () => {
-  const { counter } = useContext(CounterContext);
+  const { counter } = useCounterContext();
+  const { color } = useTitleColorContext();
+
   return (
     <div>
-      <div className="h-screen flex items-center justify-center">
-        <h1 className="text-orange-500 text-2xl font-bold ">Home</h1>
-        <p>Valor do contador: {counter}</p>
+      <div className="h-screen flex flex-col gap-4 items-center justify-center">
+        <h1 className={`text-${color}-500 text-2xl font-bold`}>Home</h1>
+        <p className="text-orange-100">Valor do contador: {counter}</p>
+        <ChangeCounter />
       </div>
     </div>
   );
