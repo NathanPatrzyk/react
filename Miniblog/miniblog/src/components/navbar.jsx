@@ -35,7 +35,7 @@ export function Navbar() {
         to="/"
       >
         <SquareTerminal />
-        Mini <span className="font-bold">Blog</span>
+        Mini<span className="font-bold">Blog</span>
       </NavLink>
 
       <div className="items-center gap-2 flex">
@@ -43,7 +43,7 @@ export function Navbar() {
           className={({ isActive }) =>
             isActive
               ? "text-zinc-900 border-zinc-900 transition ease-in-out duration-300 p-1 border-b-2 font-bold"
-              : "text-orange-50 hover:border-orange-50text-orange-50 transition ease-in-out duration-300 p-1 border-b-2 border-transparent hover:opacity-80  hover:border-opacity-80 font-bold"
+              : "text-orange-50 hover:border-orange-50 transition ease-in-out duration-300 p-1 border-b-2 border-transparent hover:opacity-80  hover:border-opacity-80 font-bold"
           }
           to="/"
         >
@@ -53,7 +53,7 @@ export function Navbar() {
           className={({ isActive }) =>
             isActive
               ? "text-zinc-900 border-zinc-900 transition ease-in-out duration-300 p-1 border-b-2 font-bold"
-              : "text-orange-50 hover:border-orange-50text-orange-50 transition ease-in-out duration-300 p-1 border-b-2 border-transparent hover:opacity-80  hover:border-opacity-80 font-bold"
+              : "text-orange-50 hover:border-orange-50 transition ease-in-out duration-300 p-1 border-b-2 border-transparent hover:opacity-80  hover:border-opacity-80 font-bold"
           }
           to="/about"
         >
