@@ -10,11 +10,11 @@ import { Footer } from "./components/footer";
 
 export function App() {
   return (
-    <div>
+    <div className="bg-zinc-950 text-zinc-300">
       <BrowserRouter>
         <Navbar />
 
-        <div className="mb-4">
+        <div className="flex items-center justify-center">
           <Routes>
             <Route path="/" element={<Home />}></Route>
             <Route path="/about" element={<About />}></Route>
