@@ -1,6 +1,5 @@
 import { NavLink } from "react-router-dom";
 
-import { useState, useEffect } from "react";
 import { SquareTerminal } from "lucide-react";
 
 export function Navbar() {
@@ -13,7 +12,7 @@ export function Navbar() {
         to="/"
       >
         <SquareTerminal />
-        Mini<span className="font-bold">Blog</span>
+        Mini<span className="font-bold">BLOG</span>
       </NavLink>
 
       <div className="items-center gap-2 flex">
