@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 
 import { CircleX } from "lucide-react";
 
+import { useAuthentication } from "../../hooks/useAuthentication";
+
 export function Register() {
   const [displayName, setDisplayName] = useState("");
   const [email, setEmail] = useState("");
@@ -9,7 +11,9 @@ export function Register() {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [error, setError] = useState("");
 
-  const handleSubmit = (e) => {
+  const { createUser, error: authError, loading } = useAuthentication();
+
+  async function handleSubmit(e) {
     e.preventDefault();
     setError("");
 
@@ -24,8 +28,10 @@ export function Register() {
       return;
     }
 
-    console.log(user);
-  };
+    const res = await createUser(user);
+
+    console.log(res);
+  }
 
   return (
     <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-2 w-screen">
