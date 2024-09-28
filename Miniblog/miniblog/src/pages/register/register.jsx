@@ -33,6 +33,12 @@ export function Register() {
     console.log(res);
   }
 
+  useEffect(() => {
+    if (authError) {
+      setError(authError);
+    }
+  }, [authError]);
+
   return (
     <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-2 w-screen">
       <div className="bg-[url('/img.webp')] sm:bg-none col-span-2 lg:col-span-1 flex items-center justify-center">
@@ -88,9 +94,16 @@ export function Register() {
                 onChange={(e) => setConfirmPassword(e.target.value)}
               />
             </label>
-            <button className="w-full bg-orange-600 hover:bg-opacity-80 transition ease-in-out duration-300 text-orange-950 font-semibold rounded-md px-4 py-2">
-              Cadastrar
-            </button>
+            {!loading && (
+              <button className="w-full bg-orange-600 hover:bg-opacity-80 transition ease-in-out duration-300 text-orange-950 font-semibold rounded-md px-4 py-2">
+                Cadastrar
+              </button>
+            )}
+            {loading && (
+              <button className="w-full bg-orange-600 bg-opacity-60 transition ease-in-out duration-300 text-orange-950 font-semibold rounded-md px-4 py-2" disabled>
+                Aguarde...
+              </button>
+            )}
             {error && (
               <div className="bg-red-600/20 text-red-600 backdrop-blur-md fixed top-16 left-0 p-4 m-8 rounded-md ring-2 ring-red-600">
                 <p className="text-center font-bold flex items-center gap-2">

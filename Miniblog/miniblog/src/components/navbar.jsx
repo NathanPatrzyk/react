@@ -1,5 +1,7 @@
 import { NavLink } from "react-router-dom";
 
+import { useAuthentication } from "../hooks/useAuthentication";
+
 import { SquareTerminal } from "lucide-react";
 
 export function Navbar() {
