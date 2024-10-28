@@ -10,6 +10,8 @@ import { Home } from "./pages/home/home";
 import { About } from "./pages/about/about";
 import { Login } from "./pages/login/login";
 import { Register } from "./pages/register/register";
+import { CreatePost } from "./pages/createPost/createPost";
+import { Dashboard } from "./pages/dashboard/dashboard";
 
 import { Navbar } from "./components/navbar";
 import { Footer } from "./components/footer";
@@ -46,6 +48,8 @@ export function App() {
               <Route path="/about" element={<About />}></Route>
               <Route path="/login" element={<Login />}></Route>
               <Route path="/register" element={<Register />}></Route>
+              <Route path="/posts/create" element={<CreatePost />}></Route>
+              <Route path="/dashboard" element={<Dashboard />}></Route>
             </Routes>
           </div>
 
