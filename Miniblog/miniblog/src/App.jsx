@@ -30,19 +30,19 @@ export function App() {
 
   if (loadingUser) {
     return (
-      <p className="bg-zinc-950 text-zinc-300 flex justify-center items-center h-screen px-8 md:px-16 py-3">
+      <p className="bg-zinc-900 text-zinc-300 flex justify-center items-center h-screen px-8 md:px-16 py-3">
         Carregando...
       </p>
     );
   }
 
   return (
-    <div className="bg-zinc-950 text-zinc-300">
+    <div className="bg-zinc-900 text-zinc-300">
       <AuthProvider value={{ user }}>
         <BrowserRouter>
           <Navbar />
 
-          <div className="flex items-center justify-center">
+          <div className="flex items-center justify-center min-h-[90vh]">
             <Routes>
               <Route path="/" element={<Home />}></Route>
               <Route path="/about" element={<About />}></Route>
