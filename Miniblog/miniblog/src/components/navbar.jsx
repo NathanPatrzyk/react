@@ -55,6 +55,30 @@ export function Navbar() {
             </NavLink>
           </>
         )}
+        {user && (
+          <>
+            <NavLink
+              className={({ isActive }) =>
+                isActive
+                  ? "text-orange-600 border-orange-600 transition ease-in-out duration-300 p-1 border-b-2 font-bold"
+                  : "text-orange-600 hover:border-orange-600 transition ease-in-out duration-300 p-1 border-b-2 border-transparent hover:opacity-80  hover:border-opacity-80 font-bold"
+              }
+              to="/posts/create"
+            >
+              Novo post
+            </NavLink>
+            <NavLink
+              className={({ isActive }) =>
+                isActive
+                  ? "text-orange-600 border-orange-600 transition ease-in-out duration-300 p-1 border-b-2 font-bold"
+                  : "text-orange-600 hover:border-orange-600 transition ease-in-out duration-300 p-1 border-b-2 border-transparent hover:opacity-80  hover:border-opacity-80 font-bold"
+              }
+              to="/dashboard"
+            >
+              Dashboard
+            </NavLink>
+          </>
+        )}
         <NavLink
           className={({ isActive }) =>
             isActive
