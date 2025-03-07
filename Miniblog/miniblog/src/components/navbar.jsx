@@ -14,7 +14,7 @@ export function Navbar() {
       className={`bg-zinc-950/50 backdrop-blur-md px-8 md:px-16 transition ease-in-out duration-300 fixed top-0 left-0 flex items-center justify-between py-3 w-screen h-16 shadow-md`}
     >
       <NavLink
-        className="hover:opacity-90 text-orange-600 flex items-center gap-1 text-xl"
+        className="hover:opacity-90 text-orange-500 flex items-center gap-1 text-xl"
         to="/"
       >
         <SquareTerminal />
@@ -25,8 +25,8 @@ export function Navbar() {
         <NavLink
           className={({ isActive }) =>
             isActive
-              ? "text-orange-600 border-orange-600 transition ease-in-out duration-300 p-1 border-b-2 font-bold"
-              : "text-orange-600 hover:border-orange-600 transition ease-in-out duration-300 p-1 border-b-2 border-transparent hover:opacity-80  hover:border-opacity-80 font-bold"
+              ? "text-orange-500 border-orange-500 transition ease-in-out duration-300 p-1 border-b-2 font-bold"
+              : "text-orange-500 hover:border-orange-500 transition ease-in-out duration-300 p-1 border-b-2 border-transparent hover:opacity-80  hover:border-opacity-80 font-bold"
           }
           to="/"
         >
@@ -37,8 +37,8 @@ export function Navbar() {
             <NavLink
               className={({ isActive }) =>
                 isActive
-                  ? "text-orange-600 border-orange-600 transition ease-in-out duration-300 p-1 border-b-2 font-bold"
-                  : "text-orange-600 hover:border-orange-600 transition ease-in-out duration-300 p-1 border-b-2 border-transparent hover:opacity-80  hover:border-opacity-80 font-bold"
+                  ? "text-orange-500 border-orange-500 transition ease-in-out duration-300 p-1 border-b-2 font-bold"
+                  : "text-orange-500 hover:border-orange-500 transition ease-in-out duration-300 p-1 border-b-2 border-transparent hover:opacity-80  hover:border-opacity-80 font-bold"
               }
               to="/login"
             >
@@ -47,8 +47,8 @@ export function Navbar() {
             <NavLink
               className={({ isActive }) =>
                 isActive
-                  ? "text-orange-600 border-orange-600 transition ease-in-out duration-300 p-1 border-b-2 font-bold"
-                  : "text-orange-600 hover:border-orange-600 transition ease-in-out duration-300 p-1 border-b-2 border-transparent hover:opacity-80  hover:border-opacity-80 font-bold"
+                  ? "text-orange-500 border-orange-500 transition ease-in-out duration-300 p-1 border-b-2 font-bold"
+                  : "text-orange-500 hover:border-orange-500 transition ease-in-out duration-300 p-1 border-b-2 border-transparent hover:opacity-80  hover:border-opacity-80 font-bold"
               }
               to="/register"
             >
@@ -61,8 +61,8 @@ export function Navbar() {
             <NavLink
               className={({ isActive }) =>
                 isActive
-                  ? "text-orange-600 border-orange-600 transition ease-in-out duration-300 p-1 border-b-2 font-bold"
-                  : "text-orange-600 hover:border-orange-600 transition ease-in-out duration-300 p-1 border-b-2 border-transparent hover:opacity-80  hover:border-opacity-80 font-bold"
+                  ? "text-orange-500 border-orange-500 transition ease-in-out duration-300 p-1 border-b-2 font-bold"
+                  : "text-orange-500 hover:border-orange-500 transition ease-in-out duration-300 p-1 border-b-2 border-transparent hover:opacity-80  hover:border-opacity-80 font-bold"
               }
               to="/posts/create"
             >
@@ -71,8 +71,8 @@ export function Navbar() {
             <NavLink
               className={({ isActive }) =>
                 isActive
-                  ? "text-orange-600 border-orange-600 transition ease-in-out duration-300 p-1 border-b-2 font-bold"
-                  : "text-orange-600 hover:border-orange-600 transition ease-in-out duration-300 p-1 border-b-2 border-transparent hover:opacity-80  hover:border-opacity-80 font-bold"
+                  ? "text-orange-500 border-orange-500 transition ease-in-out duration-300 p-1 border-b-2 font-bold"
+                  : "text-orange-500 hover:border-orange-500 transition ease-in-out duration-300 p-1 border-b-2 border-transparent hover:opacity-80  hover:border-opacity-80 font-bold"
               }
               to="/dashboard"
             >
@@ -83,8 +83,8 @@ export function Navbar() {
         <NavLink
           className={({ isActive }) =>
             isActive
-              ? "text-orange-600 border-orange-600 transition ease-in-out duration-300 p-1 border-b-2 font-bold"
-              : "text-orange-600 hover:border-orange-600 transition ease-in-out duration-300 p-1 border-b-2 border-transparent hover:opacity-80  hover:border-opacity-80 font-bold"
+              ? "text-orange-500 border-orange-500 transition ease-in-out duration-300 p-1 border-b-2 font-bold"
+              : "text-orange-500 hover:border-orange-500 transition ease-in-out duration-300 p-1 border-b-2 border-transparent hover:opacity-80  hover:border-opacity-80 font-bold"
           }
           to="/about"
         >
@@ -93,7 +93,7 @@ export function Navbar() {
         {user && (
           <button
             onClick={logout}
-            className="text-orange-600  transition ease-in-out duration-300 p-1 border-b-2 border-transparent hover:opacity-80  hover:border-opacity-80 font-bold"
+            className="text-orange-500  transition ease-in-out duration-300 p-1 border-b-2 border-transparent hover:opacity-80  hover:border-opacity-80 font-bold"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -102,10 +102,10 @@ export function Navbar() {
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              class="lucide lucide-log-out"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="lucide lucide-log-out"
             >
               <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
               <polyline points="16 17 21 12 16 7" />

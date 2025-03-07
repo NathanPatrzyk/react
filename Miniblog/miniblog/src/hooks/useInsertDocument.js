@@ -40,7 +40,7 @@ export const useInsertDocument = (docCollection) => {
     });
 
     try {
-      const newDocument = { ...document, createdAt: Timestamp.now };
+      const newDocument = { ...document, createdAt: Timestamp.now() };
 
       const insertedDocument = await addDoc(
         collection(db, docCollection),
@@ -54,8 +54,14 @@ export const useInsertDocument = (docCollection) => {
     } catch (error) {
       checkCancelBeforeDispatch({
         type: "ERROR",
-        payload: error,
+        payload: error.message,
       });
     }
   };
+
+  useEffect(() => {
+    return () => setCancelled(true);
+  }, []);
+
+  return { insertDocument, response };
 };
