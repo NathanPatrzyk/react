@@ -15,6 +15,8 @@ export function CreatePost() {
 
   const { insertDocument, response } = useInsertDocument("posts");
 
+  const navigate = useNavigate();
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -26,26 +28,34 @@ export function CreatePost() {
       setFormError("A imagem precisa ser uma URL.");
     }
 
+    const tagsArray = tags.split(",").map((tag) => tag.trim().toLowerCase());
+
+    if (!title || !image || !tags || !body) {
+      setFormError("Por favor, preencha todos os campos!");
+    }
+
     if (formError) return;
 
     insertDocument({
       title,
       image,
       body,
-      tags,
+      tagsArray,
       uid: user.uid,
       createdBy: user.displayName,
     });
 
-    // TO DO
+    navigate("/");
   };
 
   return (
-    <div className="text-orange-50 pt-24 md:pt-32 p-8 md:p-16 flex flex-col items-center gap-8">
-      <h2 className="text-orange-500 text-3xl font-bold">Criar post</h2>
-      <p>Escreva sobre o que quiser e compartilhe o seu conhecimento!</p>
-      <form className="flex flex-col gap-6" onSubmit={handleSubmit}>
-        <label className="flex gap-4 justify-between">
+    <div className="text-orange-50 p-8 md:p-16 pt-24 md:pt-32 flex flex-col items-center gap-8 w-screen max-w-2xl">
+      <h2 className="text-orange-500 text-3xl w-full font-bold">Criar post</h2>
+      <p className="w-full">
+        Escreva sobre o que quiser e compartilhe o seu conhecimento!
+      </p>
+      <form className="flex flex-col gap-6 w-full" onSubmit={handleSubmit}>
+        <label className="flex flex-col gap-2 justify-between">
           <span>Título:</span>
           <input
             className="text-zinc-500 hover:text-zinc-400 focus:text-zinc-400 active:text-zinc-400 box-border bg-transparent hover:bg-zinc-800/30 focus:bg-zinc-800/30 active:bg-zinc-800/30 ring-1 ring-zinc-800/80 hover:ring-zinc-700 focus:outline-none focus:ring-orange-500 active:outline-none active:ring-orange-500 rounded-md px-4 py-2 w-full transition ease-in-out duration-300"
@@ -57,7 +67,7 @@ export function CreatePost() {
             value={title}
           />
         </label>
-        <label className="flex gap-4 justify-between">
+        <label className="flex flex-col gap-2 justify-between">
           <span>URL da imagem:</span>
           <input
             className="text-zinc-500 hover:text-zinc-400 focus:text-zinc-400 active:text-zinc-400 box-border bg-transparent hover:bg-zinc-800/30 focus:bg-zinc-800/30 active:bg-zinc-800/30 ring-1 ring-zinc-800/80 hover:ring-zinc-700 focus:outline-none focus:ring-orange-500 active:outline-none active:ring-orange-500 rounded-md px-4 py-2 w-full transition ease-in-out duration-300"
@@ -69,7 +79,7 @@ export function CreatePost() {
             value={image}
           />
         </label>
-        <label className="flex gap-4 justify-between">
+        <label className="flex flex-col gap-2 justify-between">
           <span>Conteúdo:</span>
           <textarea
             className="text-zinc-500 hover:text-zinc-400 focus:text-zinc-400 active:text-zinc-400 box-border bg-transparent hover:bg-zinc-800/30 focus:bg-zinc-800/30 active:bg-zinc-800/30 ring-1 ring-zinc-800/80 hover:ring-zinc-700 focus:outline-none focus:ring-orange-500 active:outline-none active:ring-orange-500 rounded-md px-4 py-2 w-full transition ease-in-out duration-300"
@@ -80,7 +90,7 @@ export function CreatePost() {
             value={body}
           ></textarea>
         </label>
-        <label className="flex gap-4 justify-between">
+        <label className="flex flex-col gap-2 justify-between">
           <span>Tags:</span>
           <input
             className="text-zinc-500 hover:text-zinc-400 focus:text-zinc-400 active:text-zinc-400 box-border bg-transparent hover:bg-zinc-800/30 focus:bg-zinc-800/30 active:bg-zinc-800/30 ring-1 ring-zinc-800/80 hover:ring-zinc-700 focus:outline-none focus:ring-orange-500 active:outline-none active:ring-orange-500 rounded-md px-4 py-2 w-full transition ease-in-out duration-300"

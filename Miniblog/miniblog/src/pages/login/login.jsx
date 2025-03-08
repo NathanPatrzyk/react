@@ -32,17 +32,14 @@ export function Login() {
   }, [authError]);
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-2 w-screen">
-      <div className="bg-[url('/img.webp')] sm:bg-none col-span-2 lg:col-span-1 flex items-center justify-center">
+    <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-2 w-screen h-full">
+      <div className=" col-span-2 lg:col-span-1 flex items-center justify-center">
         <div className="bg-zinc-900 flex flex-col p-8 gap-6 max-w-full my-32 mx-8 rounded-md">
-          <h1 className="text-orange-500 text-3xl text-center font-bold">
-            Entrar
-          </h1>
-          <p className="text-center">
-            Faça o login para poder utilizar o sistema:
-          </p>
+          <h1 className="text-orange-500 text-3xl font-bold w-full">Entrar</h1>
+          <p className="w-full">Faça o login para poder utilizar o sistema:</p>
           <form className="flex flex-col gap-6" onSubmit={handleSubmit}>
-            <label className="flex gap-4 justify-between">
+            <label className="flex flex-col gap-2 justify-between">
+              <span>Email:</span>
               <input
                 className="text-zinc-500 hover:text-zinc-400 focus:text-zinc-400 active:text-zinc-400 box-border bg-transparent hover:bg-zinc-800/30 focus:bg-zinc-800/30 active:bg-zinc-800/30 ring-1 ring-zinc-800/80 hover:ring-zinc-700 focus:outline-none focus:ring-orange-500 active:outline-none active:ring-orange-500 rounded-md px-4 py-2 w-full transition ease-in-out duration-300"
                 type="email"
@@ -53,7 +50,8 @@ export function Login() {
                 onChange={(e) => setEmail(e.target.value)}
               />
             </label>
-            <label className="flex gap-4 justify-between">
+            <label className="flex flex-col gap-2 justify-between">
+              <span>Senha:</span>
               <input
                 className="text-zinc-500 hover:text-zinc-400 focus:text-zinc-400 active:text-zinc-400 box-border bg-transparent hover:bg-zinc-800/30 focus:bg-zinc-800/30 active:bg-zinc-800/30 ring-1 ring-zinc-800/80 hover:ring-zinc-700 focus:outline-none focus:ring-orange-500 active:outline-none active:ring-orange-500 rounded-md px-4 py-2 w-full transition ease-in-out duration-300"
                 type="password"
@@ -88,7 +86,7 @@ export function Login() {
           </form>
         </div>
       </div>
-      <div className="bg-[url('/img.webp')] bg-center bg-cover"></div>
+      <div className="sm:block hidden sm:bg-[url('/img.webp')] bg-center min-h-[90vh]"></div>
     </div>
   );
 }
