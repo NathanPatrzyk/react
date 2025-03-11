@@ -1,10 +1,11 @@
 import { useNavigate, Link } from "react-router-dom";
 import { useState } from "react";
 import { Search } from "lucide-react";
+import { useFetchDocuments } from "../../hooks/useFetchDocuments";
 
 export function Home() {
   const [query, setQuery] = useState("");
-  const [posts] = useState([]);
+  const { documents: posts, loading } = useFetchDocuments("posts");
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -33,7 +34,13 @@ export function Home() {
         </form>
       </div>
       <div className="w-full flex flex-col gap-4">
-        <h3 className="text-orange-500 text-3xl font-bold w-full">Posts...</h3>
+        {loading && <p>Carregando...</p>}
+        {posts &&
+          posts.map((post) => (
+            <h3 className="text-orange-500 text-3xl font-bold w-full">
+              {post.title}
+            </h3>
+          ))}
         {posts && posts.length === 0 && (
           <div className="flex gap-4 justify-between items-center">
             <p>Não foram encontrados posts</p>
