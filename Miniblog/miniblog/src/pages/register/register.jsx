@@ -40,7 +40,7 @@ export function Register() {
   }, [authError]);
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-2 w-screen">
+    <div className="text-zinc-50 grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-2 w-screen">
       <div className="bg-[url('/img.webp')] sm:bg-none col-span-2 lg:col-span-1 flex items-center justify-center">
         <div className="bg-zinc-900 flex flex-col p-8 gap-6 max-w-full my-32 mx-8 rounded-md">
           <h1 className="text-orange-500 text-3xl text-center font-bold">
@@ -100,7 +100,10 @@ export function Register() {
               </button>
             )}
             {loading && (
-              <button className="w-full bg-orange-500 bg-opacity-60 transition ease-in-out duration-300 text-orange-950 font-semibold rounded-md px-4 py-2" disabled>
+              <button
+                className="w-full bg-orange-500 bg-opacity-60 transition ease-in-out duration-300 text-orange-950 font-semibold rounded-md px-4 py-2"
+                disabled
+              >
                 Aguarde...
               </button>
             )}

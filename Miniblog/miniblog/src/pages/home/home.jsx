@@ -2,6 +2,7 @@ import { useNavigate, Link } from "react-router-dom";
 import { useState } from "react";
 import { Search } from "lucide-react";
 import { useFetchDocuments } from "../../hooks/useFetchDocuments";
+import { PostDetails } from "../../components/postDetails";
 
 export function Home() {
   const [query, setQuery] = useState("");
@@ -12,7 +13,7 @@ export function Home() {
   };
 
   return (
-    <div className="text-orange-50 pt-24 md:pt-32 p-8 md:p-16 flex flex-col items-center gap-8 w-screen max-w-2xl">
+    <div className="text-zinc-50 pt-24 md:pt-32 p-8 md:p-16 flex flex-col items-center gap-8 w-screen max-w-2xl">
       <div className="w-full flex flex-col gap-4">
         <h2 className="text-orange-500 text-3xl font-bold w-full">
           Veja nossos posts mais recentes
@@ -33,14 +34,10 @@ export function Home() {
           </button>
         </form>
       </div>
-      <div className="w-full flex flex-col gap-4">
+      <div className="w-full flex flex-col gap-8">
         {loading && <p>Carregando...</p>}
         {posts &&
-          posts.map((post) => (
-            <h3 className="text-orange-500 text-3xl font-bold w-full">
-              {post.title}
-            </h3>
-          ))}
+          posts.map((post) => <PostDetails key={post.id} post={post} />)}
         {posts && posts.length === 0 && (
           <div className="flex gap-4 justify-between items-center">
             <p>Não foram encontrados posts</p>

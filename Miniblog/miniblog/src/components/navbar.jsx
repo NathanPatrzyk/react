@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 
 import { useAuthentication } from "../hooks/useAuthentication";
-import { useAuthValue } from "../context/AuthContext";
+import { useAuthValue } from "../context/authContext";
 
 import { SquareTerminal } from "lucide-react";
 
@@ -10,9 +10,7 @@ export function Navbar() {
   const { logout } = useAuthentication();
 
   return (
-    <nav
-      className="border-b border-zinc-700 backdrop-blur-md px-8 md:px-16 transition ease-in-out duration-300 fixed top-0 left-0 flex items-center justify-between py-3 w-screen h-16"
-    >
+    <nav className="border-b border-zinc-700 backdrop-blur-md px-8 md:px-16 transition ease-in-out duration-300 fixed top-0 left-0 flex items-center justify-between py-3 w-screen h-16">
       <NavLink
         className="hover:opacity-90 text-orange-500 flex items-center gap-1 text-xl"
         to="/"

@@ -32,7 +32,7 @@ export function Login() {
   }, [authError]);
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-2 w-screen h-full">
+    <div className="text-zinc-50 grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-2 w-screen h-full">
       <div className=" col-span-2 lg:col-span-1 flex items-center justify-center">
         <div className="bg-zinc-900 flex flex-col p-8 gap-6 max-w-full my-32 mx-8 rounded-md">
           <h1 className="text-orange-500 text-3xl font-bold w-full">Entrar</h1>

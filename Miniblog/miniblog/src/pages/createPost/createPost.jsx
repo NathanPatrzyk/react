@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useAuthValue } from "../../context/AuthContext";
+import { useAuthValue } from "../../context/authContext";
 import { useInsertDocument } from "../../hooks/useInsertDocument";
 import { CircleX } from "lucide-react";
 
@@ -49,7 +49,7 @@ export function CreatePost() {
   };
 
   return (
-    <div className="text-orange-50 p-8 md:p-16 pt-24 md:pt-32 flex flex-col items-center gap-8 w-screen max-w-2xl">
+    <div className="text-zinc-50 p-8 md:p-16 pt-24 md:pt-32 flex flex-col items-center gap-8 w-screen max-w-2xl">
       <h2 className="text-orange-500 text-3xl w-full font-bold">Criar post</h2>
       <p className="w-full">
         Escreva sobre o que quiser e compartilhe o seu conhecimento!

@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 export function About() {
   return (
-    <div className="text-orange-50 pt-24 md:pt-32 p-8 md:p-16 flex flex-col items-center gap-8 w-screen max-w-2xl">
+    <div className="text-zinc-50 pt-24 md:pt-32 p-8 md:p-16 flex flex-col items-center gap-8 w-screen max-w-2xl">
       <h2 className="text-orange-500 text-3xl w-full">
         Sobre o Mini <span className="font-bold">Blog</span>
       </h2>
