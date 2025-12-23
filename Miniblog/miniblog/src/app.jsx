@@ -8,6 +8,8 @@ import { AuthProvider } from "./context/authContext";
 
 import { Home } from "./pages/home/home";
 import { About } from "./pages/about/about";
+import { Search } from "./pages/search/search";
+import { Post } from "./pages/post/post";
 import { Login } from "./pages/login/login";
 import { Register } from "./pages/register/register";
 import { CreatePost } from "./pages/createPost/createPost";
@@ -46,6 +48,8 @@ export function App() {
             <Routes>
               <Route path="/" element={<Home />}></Route>
               <Route path="/about" element={<About />}></Route>
+              <Route path="/search" element={<Search />}></Route>
+              <Route path="/posts/:id" element={<Post />}></Route>
               <Route
                 path="/login"
                 element={!user ? <Login /> : <Navigate to="/" />}
