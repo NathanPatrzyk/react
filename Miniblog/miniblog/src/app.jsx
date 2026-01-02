@@ -17,6 +17,7 @@ import { Dashboard } from "./pages/dashboard/dashboard";
 
 import { Navbar } from "./components/navbar";
 import { Footer } from "./components/footer";
+import { EditPost } from "./pages/editPost/editPost";
 
 export function App() {
   const [user, setUser] = useState(undefined);
@@ -57,6 +58,10 @@ export function App() {
               <Route
                 path="/register"
                 element={!user ? <Register /> : <Navigate to="/" />}
+              ></Route>
+              <Route
+                path="/posts/edit/:id"
+                element={user ? <EditPost /> : <Navigate to="/login" />}
               ></Route>
               <Route
                 path="/posts/create"
