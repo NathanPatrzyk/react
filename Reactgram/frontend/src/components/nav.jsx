@@ -15,10 +15,13 @@ import { useAuth } from "@/hooks/useAuth";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "@/slices/authSlice";
 import { toast } from "sonner";
+import { useState } from "react";
 
 function Nav() {
   const { auth } = useAuth();
   const { user } = useSelector((state) => state.auth);
+
+  const [query, setQuery] = useState("");
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -36,6 +39,14 @@ function Nav() {
     navigate("/login");
   };
 
+  const handleSearch = (e) => {
+    e.preventDefault();
+
+    if (query) {
+      return navigate(`/search?q=${query}`);
+    }
+  };
+
   return (
     <nav className="flex flex-col gap-4 py-8">
       <Link
@@ -45,9 +56,12 @@ function Nav() {
         <Instagram className="size-6" />
         Reactgram
       </Link>
-      <form>
+      <form onSubmit={handleSearch}>
         <InputGroup>
-          <InputGroupInput placeholder="Pesquisar" />
+          <InputGroupInput
+            placeholder="Pesquisar"
+            onChange={(e) => setQuery(e.target.value)}
+          />
           <InputGroupAddon>
             <Search className="size-5" />
           </InputGroupAddon>

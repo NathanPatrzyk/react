@@ -32,6 +32,10 @@ const updateProfile = createAsyncThunk(
 const getUserDetails = createAsyncThunk("user/get", async (id, thunkAPI) => {
   const data = await userService.getUserDetails(id);
 
+  if (data.errors) {
+    return thunkAPI.rejectWithValue(data.errors[0]);
+  }
+
   return data;
 });
 
@@ -65,6 +69,10 @@ const userSlice = createSlice({
       .addCase(getUserDetails.fulfilled, (state, action) => {
         state.loading = false;
         state.user = action.payload;
+      })
+      .addCase(getUserDetails.rejected, (state) => {
+        state.loading = false;
+        state.user = {};
       });
   },
 });

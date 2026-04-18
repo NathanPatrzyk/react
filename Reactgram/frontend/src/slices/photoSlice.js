@@ -26,8 +26,11 @@ const getUserPhotos = createAsyncThunk(
   "photo/userphotos",
   async (id, thunkAPI) => {
     const token = thunkAPI.getState().auth.user.token;
-
     const data = await photoService.getUserPhotos(id, token);
+
+    if (data.errors) {
+      return thunkAPI.rejectWithValue(data.errors[0]);
+    }
 
     return data;
   },
@@ -111,6 +114,17 @@ const getPhotos = createAsyncThunk("photo/getall", async (_, thunkAPI) => {
   return data;
 });
 
+const searchPhotos = createAsyncThunk(
+  "photo/search",
+  async (query, thunkAPI) => {
+    const token = thunkAPI.getState().auth.user.token;
+
+    const data = await photoService.searchPhotos(query, token);
+
+    return data;
+  },
+);
+
 const photoSlice = createSlice({
   name: "photo",
   initialState,
@@ -127,6 +141,7 @@ const photoSlice = createSlice({
       })
       .addCase(publishPhoto.rejected, (state) => {
         state.loading = false;
+        state.photo = {};
       })
       .addCase(getUserPhotos.pending, (state) => {
         state.loading = true;
@@ -202,6 +217,13 @@ const photoSlice = createSlice({
       .addCase(getPhotos.fulfilled, (state, action) => {
         state.loading = false;
         state.photos = action.payload;
+      })
+      .addCase(searchPhotos.pending, (state) => {
+        state.loading = true;
+      })
+      .addCase(searchPhotos.fulfilled, (state, action) => {
+        state.loading = false;
+        state.photos = action.payload;
       });
   },
 });
@@ -216,5 +238,6 @@ export {
   comment,
   getPhotos,
   photoSlice,
+  searchPhotos,
 };
 export default photoSlice.reducer;

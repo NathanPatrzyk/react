@@ -1,11 +1,13 @@
 import { LikeContainer } from "@/components/like-container";
 import { PhotoItem } from "@/components/photo-item";
+import { AvatarFallback, Avatar, AvatarImage } from "@/components/ui/avatar";
+import { Button } from "@/components/ui/button";
 import { Field, FieldGroup } from "@/components/ui/field";
 import { Input } from "@/components/ui/input";
 import { Spinner } from "@/components/ui/spinner";
 import { getPhoto, like, comment } from "@/slices/photoSlice";
 import { uploads } from "@/utils/config";
-import { MessageCircle } from "lucide-react";
+import { Eye, MessageCircle } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useParams } from "react-router-dom";
@@ -67,13 +69,13 @@ function Photo() {
     <div className="max-w-sm bg-background flex flex-col items-center justify-center gap-6 p-6 md:p-10 mx-auto">
       <PhotoItem photo={photo} />
       <LikeContainer photo={photo} user={user} handleLike={handleLike} />
-      <Button className="mx-auto" asChild>
+      <Button className="w-full" asChild>
         <Link to={`/photos/${photo._id}`}>
           <Eye className="size-5" />
           Ver mais
         </Link>
       </Button>
-      <div>
+      <div className="flex flex-col gap-6 w-full">
         {photo.comments && (
           <>
             <h3>Comentários: ({photo.comments.length})</h3>
@@ -97,16 +99,19 @@ function Photo() {
             </form>
             {photo.comments.length === 0 && <p>Não há comentários...</p>}
             {photo.comments.map((comment) => (
-              <div key={comment.comment}>
-                <div>
+              <div className="flex flex-col gap-4" key={comment.comment}>
+                <div className="flex gap-2 items-center">
                   {comment.userImage && (
-                    <img
-                      src={`${uploads}/users/${comment.userImage}`}
-                      alt={comment.userName}
-                    />
+                    <Avatar>
+                      <AvatarImage
+                        src={`${uploads}/users/${comment.userImage}`}
+                        alt={comment.userName}
+                      />
+                      <AvatarFallback>N/A</AvatarFallback>
+                    </Avatar>
                   )}
                   <Link to={`/users/${comment.userId}`}>
-                    <p>{comment.userName}</p>
+                    <p className="font-bold">{comment.userName}</p>
                   </Link>
                 </div>
                 <p>{comment.comment}</p>

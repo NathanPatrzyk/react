@@ -13,7 +13,7 @@ function LikeContainer({ photo, user, handleLike }) {
               onClick={() => handleLike(photo)}
             />
           )}
-          <p>{photo.likes.lenght} like(s)</p>
+          <p>{photo.likes.length} like(s)</p>
         </div>
       )}
     </>

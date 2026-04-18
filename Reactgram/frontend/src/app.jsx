@@ -3,7 +3,7 @@ import { Button } from "./components/ui/button";
 import { Home } from "./pages/home/home";
 import { Login } from "./pages/auth/login";
 import { Register } from "./pages/auth/register";
-import { Search } from "./pages/auth/search";
+import { Search } from "./pages/search/search";
 import {
   InputGroup,
   InputGroupAddon,

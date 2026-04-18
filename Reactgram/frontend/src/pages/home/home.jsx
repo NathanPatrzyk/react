@@ -1,4 +1,6 @@
+import { LikeContainer } from "@/components/like-container";
 import { PhotoItem } from "@/components/photo-item";
+import { Spinner } from "@/components/ui/spinner";
 import { getPhotos, like } from "@/slices/photoSlice";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -27,16 +29,19 @@ function Home() {
   }
 
   return (
-    <div>
+    <div className="max-w-sm bg-background flex flex-col items-center justify-center gap-6 p-6 md:p-10 mx-auto">
       {photos &&
         photos.map((photo) => (
-          <div key={photo._id}>
+          <div
+            className="w-full flex flex-col items-center justify-center gap-6 mx-auto"
+            key={photo._id}
+          >
             <PhotoItem photo={photo} />
             <LikeContainer photo={photo} user={user} handleLike={handleLike} />
           </div>
         ))}
       {photos.length === 0 && (
-        <p className="text-muted-foreground leadssssssssssssssing-normal font-normal text-center">
+        <p className="text-muted-foreground leadsing-normal font-normal text-center">
           Ainda não há fotos publicadas{" "}
           <Link to={`/users/${user._id}`}>clique aqui</Link>
         </p>
